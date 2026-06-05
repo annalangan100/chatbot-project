@@ -82,3 +82,30 @@ Bot: Python is a programming language.
 User: bye
 Bot: Goodbye!
 
+User: hi there
+Bot: Nice to see you!
+
+User: hi there?
+Bot: Hi there!
+
+User: wow
+Bot: I don't understand that yet.
+
+User: bye
+Bot: Goodbye!
+
+User: my name is anna
+Bot: Nice to meet you anna
+
+User: what is my name
+Bot: Your name is anna
+
+User: bye
+Bot: Goodbye!
+
+User: what is my name
+Bot: Your name is anna
+
+User: bye
+Bot: Goodbye!
+

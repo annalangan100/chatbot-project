@@ -37,3 +37,21 @@ Bot: Anna is building me.
 User: bye
 Bot: Goodbye!
 
+User: who made you
+Bot: My name is ChatBot.
+
+User: what is your name
+Bot: My name is ChatBot.
+
+User: bye
+Bot: Goodbye!
+
+User: hello
+Bot: Hello!
+
+User: what is your name
+Bot: Anna is building me.
+
+User: bye
+Bot: Goodbye!
+

@@ -1,0 +1,9 @@
+User: hello
+Bot: Hello!
+
+User: what is python
+Bot: Python is a programming language.
+
+User: bye
+Bot: Goodbye!
+

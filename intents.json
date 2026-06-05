@@ -1,0 +1,45 @@
+{
+  "greeting": {
+    "patterns": [
+      "hello",
+      "hi",
+      "hey",
+      "good morning",
+      "good evening"
+    ],
+    "responses": [
+      "Hello!",
+      "Hi there!",
+      "Nice to see you!"
+    ]
+  },
+
+  "about_bot": {
+    "patterns": [
+      "what is your name",
+      "who made you"
+    ],
+    "responses": [
+      "My name is ChatBot.",
+      "Anna is building me."
+    ]
+  },
+
+  "python": {
+    "patterns": [
+      "what is python"
+    ],
+    "responses": [
+      "Python is a programming language."
+    ]
+  },
+
+  "goodbye": {
+    "patterns": [
+      "bye"
+    ],
+    "responses": [
+      "Goodbye!"
+    ]
+  }
+}

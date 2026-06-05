@@ -1,4 +1,7 @@
-from responses import responses
+import json
+
+with open("responses.json", "r") as file:
+    responses = json.load(file)
 
 print("Chatbot started!")
 print("Type 'bye' to exit.")
@@ -11,6 +14,5 @@ while True:
 
         if user_input == "bye":
             break
-
     else:
         print("Bot: I don't understand that yet.")

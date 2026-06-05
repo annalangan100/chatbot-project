@@ -7,3 +7,9 @@ Bot: Python is a programming language.
 User: bye
 Bot: Goodbye!
 
+User: best pizza
+Bot: I don't understand that yet.
+
+User: bye
+Bot: Goodbye!
+

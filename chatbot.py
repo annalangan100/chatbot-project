@@ -1,5 +1,7 @@
 import json
 
+from utils.response_handler import get_response
+
 with open("responses.json", "r") as file:
     responses = json.load(file)
 
@@ -9,10 +11,9 @@ print("Type 'bye' to exit.")
 while True:
     user_input = input("You: ").lower()
 
-    if user_input in responses:
-        print("Bot:", responses[user_input])
+    response = get_response(user_input, responses)
 
-        if user_input == "bye":
-            break
-    else:
-        print("Bot: I don't understand that yet.")
+    print("Bot:", response)
+
+    if user_input == "bye":
+        break

@@ -55,3 +55,30 @@ Bot: Anna is building me.
 User: bye
 Bot: Goodbye!
 
+User: hello
+Bot: Nice to see you!
+
+User: hi
+Bot: Nice to see you!
+
+User: hey
+Bot: Hello!
+
+User: bye
+Bot: Goodbye!
+
+User: hello there
+Bot: Hi there!
+
+User: hi chatbot
+Bot: Hi there!
+
+User: good morning bot
+Bot: Hi there!
+
+User: what is python used for
+Bot: Python is a programming language.
+
+User: bye
+Bot: Goodbye!
+

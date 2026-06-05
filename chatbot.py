@@ -15,6 +15,35 @@ print("Type 'bye' to exit.")
 while True:
     user_input = input("You: ").lower()
 
+    if user_input == "help":
+
+        response = """
+        Available commands:
+
+            - hello
+            - hi
+            - hey
+            - good morning
+            - good evening
+
+            - what is your name
+            - who made you
+
+            - what is python
+
+            - my name is <your name>
+            - what is my name
+
+            - help
+            - bye
+            """
+
+        print("Bot:", response)
+
+        log_conversation(user_input, response)
+
+        continue
+
     if user_input.startswith("my name is "):
 
         name = user_input.replace("my name is ", "")

@@ -12,10 +12,15 @@ with open("intents.json", "r") as file:
 
 user_data = load_user_data()
 
+chat_history = []
+
 @app.route("/", methods=["GET", "POST"])
 def home():
 
+    global chat_history
+
     response = ""
+
 
     if request.method == "POST":
 
@@ -37,10 +42,17 @@ def home():
                 intents
             )
 
+        chat_history.append(
+            {
+                "user": user_input,
+                "bot": response
+            }
+        )
+
     return render_template(
         "index.html",
-        response=response
-    )
+        chat_history=chat_history
+)
 
 
 if __name__ == "__main__":

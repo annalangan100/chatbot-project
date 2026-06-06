@@ -1,87 +1,68 @@
-# Chatbot Project
+# Echo
 
-A chatbot built in Python while learning software development, Git, GitHub, and chatbot architecture.
+Echo is a general-purpose chatbot built with Python and Flask.
 
-## Project Goals
+## Features
 
-This project is being developed incrementally to learn:
+* Intent-based responses
+* Fuzzy matching
+* Persistent memory
+* Conversation logging
+* Help command
+* Flask web interface
+* Chat-style conversation history
+* GitHub version control workflow
 
-* Python programming
-* Git and GitHub workflows
-* JSON data handling
-* Chatbot design
-* Natural Language Processing (NLP)
-* Machine Learning concepts
+## Technologies Used
 
-## Current Features
+* Python
+* Flask
+* JSON
+* Git
+* GitHub
 
-* Command-line chatbot
-* Responses stored in JSON
-* Modular project structure
-* Git branch workflow
-* GitHub version control
+## Running Echo
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the application:
+
+```bash
+python app.py
+```
+
+Open your browser and visit:
+
+```text
+http://127.0.0.1:5000
+```
 
 ## Project Structure
 
 ```text
 chatbot-project/
 │
+├── app.py
 ├── chatbot.py
-├── responses.json
+├── intents.json
 ├── README.md
 ├── requirements.txt
-└── .gitignore
+│
+├── data/
+├── logs/
+├── templates/
+└── utils/
 ```
 
-## Installation
+## Future Improvements
 
-Clone the repository:
-
-```bash
-git clone https://github.com/annalangan100/chatbot-project.git
-cd chatbot-project
-```
-
-## Run the Chatbot
-
-```bash
-python chatbot.py
-```
-
-## Example Conversation
-
-```text
-You: hello
-Bot: Hello!
-
-You: how are you
-Bot: I'm doing well, thanks for asking!
-
-You: bye
-Bot: Goodbye!
-```
-
-## Technologies Used
-
-* Python
-* Git
-* GitHub
-* JSON
-
-## Roadmap
-
-Planned future improvements:
-
-* [ ] Response functions
-* [ ] Conversation logging
-* [ ] Intents system
-* [ ] NLP processing
-* [ ] Machine learning chatbot
-* [ ] Web interface
-* [ ] AI integration
-
-## Author
-
-Anna Langan
-
-GitHub: https://github.com/annalangan100
+* Better memory system
+* Database storage
+* User accounts
+* NLP integration
+* API integrations
+* Enhanced UI

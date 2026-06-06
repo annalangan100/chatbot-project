@@ -12,51 +12,84 @@
 
 <body>
 
-    <div class="header">
-        <h1>🤖 Echo</h1>
-        <p>Your personal chatbot built with Python and Flask</p>
-    </div>
+    <div class="app-container">
 
-    <form action="/clear" method="POST">
-        <button type="submit">
-            Clear Chat 
-        </button>
-    </form>
-    
-    <div class="chat-container">
+        <div class="header">
+            <h1>🤖 Echo</h1>
+            <p>Your personal chatbot built with Python and Flask</p>
+        </div>
 
-        {% for chat in chat_history %}
+        <div class="chat-container">
 
-            <div class="user-message">
-                <div class="user-bubble">
-                    {{ chat.user }}
+            {% if not chat_history %}
+
+                <div class="welcome-message">
+                    Start a conversation with Echo.
                 </div>
-            </div>
 
-            <div class="bot-message">
-                <div class="bot-bubble">
-                    {{ chat.bot }}
+            {% endif %}
+
+            {% for chat in chat_history %}
+
+                <div class="user-message">
+
+                    <div class="user-bubble">
+                        {{ chat.user }}
+                    </div>
+
                 </div>
-            </div>
 
-        {% endfor %}
+                <div class="bot-message">
+
+                    <div class="bot-bubble">
+                        {{ chat.bot }}
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="input-area">
+
+            <form method="POST" class="message-form">
+
+                <input
+                    id="message-input"
+                    type="text"
+                    name="message"
+                    placeholder="Type a message..."
+                    required
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+            <form
+                action="/clear"
+                method="POST"
+            >
+
+                <button
+                    type="submit"
+                    class="clear-button"
+                >
+                    Clear Chat
+                </button>
+
+            </form>
+
+        </div>
+
+        <footer>
+            Echo v1.0
+        </footer>
 
     </div>
-
-    <form method="POST">
-
-        <input
-            type="text"
-            name="message"
-            placeholder="Type a message..."
-            required
-        >
-
-        <button type="submit">
-            Send
-        </button>
-
-    </form>
 
     <script>
 
@@ -66,11 +99,11 @@
         chatContainer.scrollTop =
             chatContainer.scrollHeight;
 
-    </script>
+        document
+            .getElementById("message-input")
+            .focus();
 
-    <footer>
-        Echo v1.0
-    </footer>
+    </script>
 
 </body>
 

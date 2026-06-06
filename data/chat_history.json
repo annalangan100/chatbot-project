@@ -1,11 +1,55 @@
 [
     {
-        "user": "who made you",
+        "user": "what is your name",
         "bot": "Anna is building me."
     },
     {
-        "user": "what is your name",
-        "bot": "Anna is building me."
+        "user": "who made u",
+        "bot": "I don't understand that yet."
+    },
+    {
+        "user": "who made u",
+        "bot": "I don't understand that yet."
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "what is python",
+        "bot": "Python is a programming language."
+    },
+    {
+        "user": "banana",
+        "bot": "I don't understand that yet."
+    },
+    {
+        "user": "my name is emily",
+        "bot": "Nice to meet you emily"
+    },
+    {
+        "user": "what is my name",
+        "bot": "Your name is emily"
+    },
+    {
+        "user": "hey",
+        "bot": "I don't understand that yet."
+    },
+    {
+        "user": "hey",
+        "bot": "I don't understand that yet."
+    },
+    {
+        "user": "hello",
+        "bot": "Hi there!"
+    },
+    {
+        "user": "whats your name",
+        "bot": "I don't understand that yet."
+    },
+    {
+        "user": "who made you",
+        "bot": "I was created by Anna."
     },
     {
         "user": "what is my favorite color",
@@ -13,6 +57,10 @@
     },
     {
         "user": "hi",
-        "bot": "Hi there!"
+        "bot": "Hello!"
+    },
+    {
+        "user": "what is your name",
+        "bot": "My name is Echo."
     }
 ]

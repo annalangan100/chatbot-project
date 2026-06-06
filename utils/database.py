@@ -1,0 +1,43 @@
+import sqlite3
+import numpy as np
+from utils.embeddings import get_embedding
+
+
+def get_all_responses():
+    connection = sqlite3.connect("data/responses.db")
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT user_input, bot_response
+        FROM responses
+    """)
+
+    data = cursor.fetchall()
+    connection.close()
+
+    return data
+
+
+def get_semantic_response(user_input):
+
+    user_vec = get_embedding(user_input)
+
+    data = get_all_responses()
+
+    best_score = -1
+    best_response = None
+
+    for stored_input, bot_response in data:
+
+        stored_vec = get_embedding(stored_input)
+
+        score = np.dot(user_vec, stored_vec) / (
+            np.linalg.norm(user_vec) *
+            np.linalg.norm(stored_vec)
+        )
+
+        if score > best_score:
+            best_score = score
+            best_response = bot_response
+
+    return best_response

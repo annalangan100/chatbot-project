@@ -1,15 +1,11 @@
 from flask import Flask, render_template, request, redirect
-import json
 
-from utils.intent_handler import get_response
+from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
 
 app = Flask(__name__)
-
-with open("intents.json", "r") as file:
-    intents = json.load(file)
 
 user_data = load_user_data()
 
@@ -49,10 +45,7 @@ def home():
 
         else:
 
-            response = get_response(
-                user_input,
-                intents
-            )
+            response = get_semantic_response(user_input)
 
         chat_history.append(
             {

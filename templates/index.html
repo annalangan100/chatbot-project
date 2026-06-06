@@ -15,6 +15,12 @@
     <h1>Echo</h1>
     <p>Your personal chatbot built with Python and Flask.</p>
 
+    <form action="/clear" method="POST">
+        <button type="submit">
+            Clear Chat 
+        </button>
+    </form>
+    
     <div class="chat-container">
 
         {% for chat in chat_history %}

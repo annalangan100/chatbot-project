@@ -30,3 +30,16 @@ def save_chat_history(chat_history):
             file,
             indent=4
         )
+
+def clear_chat_history():
+
+    with open(
+        CHAT_HISTORY_FILE,
+        "w"
+    ) as file:
+
+        json.dump(
+            [],
+            file,
+            indent=4
+        )

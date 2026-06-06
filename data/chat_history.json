@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "user": "hi",
+        "bot": "Nice to see you!"
+    },
+    {
+        "user": "hello",
+        "bot": "Hi there!"
+    },
+    {
+        "user": "what is your name",
+        "bot": "My name is Echo."
+    },
+    {
+        "user": "what is your name",
+        "bot": "Anna is building me."
+    },
+    {
+        "user": "what is your name",
+        "bot": "My name is Echo."
+    },
+    {
+        "user": "what is your name",
+        "bot": "My name is Echo."
+    },
+    {
+        "user": "hi",
+        "bot": "Hi there!"
+    },
+    {
+        "user": "what is python",
+        "bot": "Python is a programming language."
+    }
+]

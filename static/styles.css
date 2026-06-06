@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(227, 222, 222);
+    background-color: rgb(227, 224, 224);
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -8,11 +8,25 @@ body {
 
 .chat-container {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 20px;
     height: 500px;
     overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: gray;
 }
 
 .user-message {
@@ -22,10 +36,13 @@ body {
 
 .user-bubble {
     display: inline-block;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: #dbeafe;
+    padding: 12px;
+    border-radius: 18px;
     max-width: 70%;
+
+    background-color: #dbeafe;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .bot-message {
@@ -35,10 +52,13 @@ body {
 
 .bot-bubble {
     display: inline-block;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: #e5e7eb;
+    padding: 12px;
+    border-radius: 18px;
     max-width: 70%;
+
+    background-color: #f3f4f6;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 form {
@@ -52,5 +72,16 @@ input[type="text"] {
 }
 
 button {
-    padding: 12px 20px;
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: gray;
 }

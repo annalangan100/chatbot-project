@@ -12,8 +12,10 @@
 
 <body>
 
-    <h1>Echo</h1>
-    <p>Your personal chatbot built with Python and Flask.</p>
+    <div class="header">
+        <h1>🤖 Echo</h1>
+        <p>Your personal chatbot built with Python and Flask</p>
+    </div>
 
     <form action="/clear" method="POST">
         <button type="submit">
@@ -55,6 +57,20 @@
         </button>
 
     </form>
+
+    <script>
+
+        const chatContainer =
+            document.querySelector(".chat-container");
+
+        chatContainer.scrollTop =
+            chatContainer.scrollHeight;
+
+    </script>
+
+    <footer>
+        Echo v1.0
+    </footer>
 
 </body>
 

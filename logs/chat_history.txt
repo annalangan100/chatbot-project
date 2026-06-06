@@ -234,3 +234,86 @@ Bot: Your favorite language is python
 User: bye
 Bot: Goodbye!
 
+User: help
+Bot: 
+        Available commands:
+
+            - hello
+            - hi
+            - hey
+            - good morning
+            - good evening
+
+            - what is your name
+            - who made you
+
+            - what is python
+
+            - my name is <your name>
+            - what is my name
+
+            - my favorite color is <color>
+            - what is my favorite color
+
+            - my favorite language is <language>
+            - what is my favorite language
+
+            - help
+            - bye
+            
+
+User: what is my name
+Bot: Your name is anna
+
+User: what is my favorite color
+Bot: Your favorite color is blue
+
+User: what is my favorite language
+Bot: Your favorite language is python
+
+User: bye
+Bot: Goodbye!
+
+User: help
+Bot: 
+Available commands:
+
+- hello
+- hi
+- hey
+- good morning
+- good evening
+
+- what is your name
+- who made you
+
+- what is python
+
+- my name is <your name>
+- what is my name
+
+- my favorite color is <color>
+- what is my favorite color
+
+- my favorite language is <language>
+- what is my favorite language
+
+- help
+- bye
+
+
+User: my name is anna
+Bot: Nice to meet you anna
+
+User: what is my favorit ecolor
+Bot: I don't understand that yet.
+
+User: what is my favorite color
+Bot: Your favorite color is blue
+
+User: hello there 
+Bot: Nice to see you!
+
+User: bye
+Bot: Goodbye!
+

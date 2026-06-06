@@ -171,3 +171,66 @@ Bot:
 User: bye
 Bot: Goodbye!
 
+User: hello
+Bot: Hi there!
+
+User: who made you
+Bot: My name is ChatBot.
+
+User: bye
+Bot: Goodbye!
+
+User: hi 
+Bot: Hi there!
+
+User: who built me
+Bot: I don't understand that yet.
+
+User: what is python?
+Bot: Python is a programming language.
+
+User: bye
+Bot: Goodbye!
+
+User: hi
+Bot: Hello!
+
+User: hey
+Bot: Hi there!
+
+User: who made you
+Bot: Anna is building me.
+
+User: what is your nq
+Bot: I don't understand that yet.
+
+User: bye
+Bot: Goodbye!
+
+User: my favorite color is blue
+Bot: I'll remember that your favorite color is blue
+
+User: what is my favorite coloe
+Bot: I don't understand that yet.
+
+User: what is my favorite color
+Bot: Your favorite color is blue
+
+User: my favorite language is python
+Bot: I'll remember that your favorite language is python
+
+User: what is my favorite language
+Bot: Your favorite language is python
+
+User: bye
+Bot: Goodbye!
+
+User: what is my favorite color
+Bot: Your favorite color is blue
+
+User: what is my favorite language
+Bot: Your favorite language is python
+
+User: bye
+Bot: Goodbye!
+

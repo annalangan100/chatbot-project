@@ -1,3 +1,5 @@
 {
-    "name": "anna"
+    "name": "anna",
+    "favorite_color": "blue",
+    "favorite_language": "python"
 }

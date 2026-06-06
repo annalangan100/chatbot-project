@@ -4,6 +4,7 @@ import json
 from utils.intent_handler import get_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
+from utils.chat_history import load_chat_history, save_chat_history
 
 app = Flask(__name__)
 
@@ -12,7 +13,7 @@ with open("intents.json", "r") as file:
 
 user_data = load_user_data()
 
-chat_history = []
+chat_history = load_chat_history()
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -47,6 +48,10 @@ def home():
                 "user": user_input,
                 "bot": response
             }
+        )
+
+        save_chat_history(
+            chat_history
         )
 
     return render_template(

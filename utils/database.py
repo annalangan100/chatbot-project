@@ -40,4 +40,7 @@ def get_semantic_response(user_input):
             best_score = score
             best_response = bot_response
 
+    if best_score < 0.55:
+        return "I don't understand that. Can you rephrase?"
+
     return best_response

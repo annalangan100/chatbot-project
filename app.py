@@ -4,7 +4,18 @@ from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
-from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response, update_response, get_response_by_id, search_knowledge, import_csv, export_csv
+from utils.database import (
+    get_semantic_response, 
+    add_response, get_all_knowledge, 
+    delete_response, 
+    update_response, 
+    get_response_by_id, 
+    search_knowledge, 
+    import_csv, 
+    export_csv, 
+    get_knowledge_count, 
+    get_database_size
+)
 
 app = Flask(__name__)
 
@@ -95,9 +106,20 @@ def admin():
 
         knowledge = get_all_knowledge()
 
+    knowledge_count = (
+        get_knowledge_count()
+    )
+
+    database_size = (
+        get_database_size()
+    )
+
     return render_template(
         "admin.html",
-        knowledge=knowledge
+        knowledge=knowledge,
+        knowledge_count=knowledge_count,
+        database_size=database_size,
+        
     )
 
 @app.route("/delete/<int:response_id>", methods=["POST"])

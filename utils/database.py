@@ -305,3 +305,39 @@ def export_csv(file_path):
         writer.writerows(
             data
         )
+
+def get_knowledge_count():
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        SELECT COUNT(*)
+        FROM responses
+        """
+    )
+
+    count = cursor.fetchone()[0]
+
+    connection.close()
+
+    return count
+
+def get_database_size():
+
+    import os
+
+    size = os.path.getsize(
+        "data/responses.db"
+    )
+
+    return round(
+        size / 1024,
+        2
+    )

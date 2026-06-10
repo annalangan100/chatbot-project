@@ -4,7 +4,7 @@ from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
-from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response, update_response, get_response_by_id, search_knowledge
+from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response, update_response, get_response_by_id, search_knowledge, import_csv
 
 app = Flask(__name__)
 
@@ -22,6 +22,33 @@ def clear():
     clear_chat_history()
 
     return redirect("/")
+
+@app.route("/import", methods=["GET", "POST"])
+def import_data():
+
+    if request.method == "POST":
+
+        file = request.files["file"]
+
+        file_path = (
+            f"uploads/{file.filename}"
+        )
+
+        file.save(
+            file_path
+        )
+
+        import_csv(
+            file_path
+        )
+
+        return redirect(
+            "/admin"
+        )
+
+    return render_template(
+        "import.html"
+    )
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin():

@@ -217,3 +217,44 @@ def search_knowledge(search_term):
     connection.close()
 
     return results
+
+def import_csv(file_path):
+
+    import csv
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    with open(
+        file_path,
+        "r",
+        encoding="utf-8"
+    ) as file:
+
+        reader = csv.DictReader(
+            file
+        )
+
+        for row in reader:
+
+            cursor.execute(
+                """
+                INSERT INTO responses
+                (
+                    user_input,
+                    bot_response
+                )
+                VALUES (?, ?)
+                """,
+                (
+                    row["user_input"],
+                    row["bot_response"]
+                )
+            )
+
+    connection.commit()
+    connection.close()

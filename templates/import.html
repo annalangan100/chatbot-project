@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Import Knowledge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',
+        filename='styles.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>📥 Import CSV</h1>
+
+    </div>
+
+    <div class="chat-container">
+
+        <form
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <input
+                type="file"
+                name="file"
+                accept=".csv"
+                required
+            >
+
+            <button type="submit">
+
+                Import
+
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

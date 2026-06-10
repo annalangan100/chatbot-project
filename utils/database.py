@@ -44,3 +44,31 @@ def get_semantic_response(user_input):
         return "I don't understand that. Can you rephrase?"
 
     return best_response
+
+def add_response(user_input, bot_response):
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        INSERT INTO responses
+        (
+            user_input,
+            bot_response
+        )
+        VALUES (?, ?)
+        """,
+        (
+            user_input,
+            bot_response
+        )
+    )
+
+    connection.commit()
+    connection.close()

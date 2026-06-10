@@ -18,5 +18,13 @@
     {
         "user": "banana",
         "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "banana",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "what is javascript",
+        "bot": "JavaScript is a programming language used for web development."
     }
 ]

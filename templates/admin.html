@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Echo Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='styles.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>📚 Echo Knowledge Base</h1>
+        <p>Add new knowledge for Echo</p>
+    </div>
+
+    <div class="chat-container">
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="user_input"
+                placeholder="User input"
+                required
+            >
+
+            <input
+                type="text"
+                name="bot_response"
+                placeholder="Bot response"
+                required
+            >
+
+            <button type="submit">
+                Add Response
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

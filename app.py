@@ -4,6 +4,7 @@ from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
+from utils.database import get_semantic_response, add_response
 
 app = Flask(__name__)
 
@@ -21,6 +22,24 @@ def clear():
     clear_chat_history()
 
     return redirect("/")
+
+@app.route("/admin", methods=["GET", "POST"])
+def admin():
+
+    if request.method == "POST":
+
+        user_input = request.form["user_input"]
+
+        bot_response = request.form["bot_response"]
+
+        add_response(
+            user_input,
+            bot_response
+        )
+
+    return render_template(
+        "admin.html"
+    )
 
 @app.route("/", methods=["GET", "POST"])
 def home():

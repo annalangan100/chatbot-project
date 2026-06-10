@@ -258,3 +258,50 @@ def import_csv(file_path):
 
     connection.commit()
     connection.close()
+
+
+def export_csv(file_path):
+
+    import csv
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+            user_input,
+            bot_response
+        FROM responses
+        """
+    )
+
+    data = cursor.fetchall()
+
+    connection.close()
+
+    with open(
+        file_path,
+        "w",
+        newline="",
+        encoding="utf-8"
+    ) as file:
+
+        writer = csv.writer(
+            file
+        )
+
+        writer.writerow(
+            [
+                "user_input",
+                "bot_response"
+            ]
+        )
+
+        writer.writerows(
+            data
+        )

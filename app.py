@@ -4,7 +4,7 @@ from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
-from utils.database import get_semantic_response, add_response
+from utils.database import get_semantic_response, add_response, get_all_knowledge
 
 app = Flask(__name__)
 
@@ -36,9 +36,12 @@ def admin():
             user_input,
             bot_response
         )
+    
+    knowledge = get_all_knowledge()
 
     return render_template(
-        "admin.html"
+        "admin.html",
+        knowledge=knowledge
     )
 
 @app.route("/", methods=["GET", "POST"])

@@ -43,6 +43,30 @@
 
     </div>
 
+    <h2>Stored Knowledge</h2>
+
+    <div class="knowledge-list">
+
+        {% for item in knowledge %}
+
+            <div class="knowledge-card">
+
+                <strong>Question:</strong>
+
+                {{ item[1] }}
+
+                <br><br>
+
+                <strong>Answer:</strong>
+
+                {{ item[2] }}
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
 </body>
 
 </html>

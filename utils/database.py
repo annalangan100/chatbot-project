@@ -72,3 +72,30 @@ def add_response(user_input, bot_response):
 
     connection.commit()
     connection.close()
+
+def get_all_knowledge():
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+            id,
+            user_input,
+            bot_response
+        FROM responses
+        ORDER BY id DESC
+        """
+    )
+
+    knowledge = cursor.fetchall()
+
+    connection.close()
+
+    return knowledge

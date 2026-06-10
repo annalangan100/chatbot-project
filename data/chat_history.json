@@ -26,5 +26,9 @@
     {
         "user": "what is javascript",
         "bot": "JavaScript is a programming language used for web development."
+    },
+    {
+        "user": "what is javascript",
+        "bot": "JavaScript is a programming language used for web development."
     }
 ]

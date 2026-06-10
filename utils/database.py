@@ -182,3 +182,38 @@ def get_response_by_id(
     connection.close()
 
     return response
+
+def search_knowledge(search_term):
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+            id,
+            user_input,
+            bot_response
+        FROM responses
+        WHERE
+            user_input LIKE ?
+            OR
+            bot_response LIKE ?
+        ORDER BY id DESC
+        """,
+        (
+            f"%{search_term}%",
+            f"%{search_term}%"
+        )
+    )
+
+    results = cursor.fetchall()
+
+    connection.close()
+
+    return results

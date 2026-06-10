@@ -4,7 +4,7 @@ from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
-from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response, update_response, get_response_by_id
+from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response, update_response, get_response_by_id, search_knowledge
 
 app = Flask(__name__)
 
@@ -37,7 +37,20 @@ def admin():
             bot_response
         )
     
-    knowledge = get_all_knowledge()
+    search_term = request.args.get(
+        "search",
+        ""
+    )
+
+    if search_term:
+
+        knowledge = search_knowledge(
+            search_term
+        )
+
+    else:
+
+        knowledge = get_all_knowledge()
 
     return render_template(
         "admin.html",

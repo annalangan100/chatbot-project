@@ -43,6 +43,25 @@
 
     </div>
 
+    <h2>Search Knowledge</h2>
+
+    <form method="GET">
+
+        <input
+            type="text"
+            name="search"
+            value="{{ request.args.get('search', '') }}"
+            placeholder="Search..."
+        >
+
+        <button type="submit">
+
+            Search
+
+        </button>
+
+    </form>
+
     <h2>Stored Knowledge</h2>
 
     <div class="knowledge-list">

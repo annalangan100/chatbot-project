@@ -61,6 +61,22 @@
 
                 {{ item[2] }}
 
+                <br><br>
+
+                <form
+                    action="/delete/{{ item[0] }}"
+                    method="POST"
+                >
+
+                    <button
+                        class="delete-button"
+                        type="submit"
+                    >
+                        Delete
+                    </button>
+
+                </form>
+
             </div>
 
         {% endfor %}

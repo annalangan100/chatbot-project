@@ -99,3 +99,24 @@ def get_all_knowledge():
     connection.close()
 
     return knowledge
+
+def delete_response(response_id):
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        DELETE FROM responses
+        WHERE id = ?
+        """,
+        (response_id,)
+    )
+
+    connection.commit()
+    connection.close()

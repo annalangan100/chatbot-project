@@ -170,3 +170,17 @@ footer {
 
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+.delete-button {
+
+    background-color: #ef4444;
+
+    color: white;
+
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+
+    background-color: #dc2626;
+}

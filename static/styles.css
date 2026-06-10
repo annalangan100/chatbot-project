@@ -184,3 +184,17 @@ footer {
 
     background-color: #dc2626;
 }
+
+.edit-button {
+
+    background-color: #3b82f6;
+
+    color: white;
+
+    margin-right: 10px;
+}
+
+.edit-button:hover {
+
+    background-color: #2563eb;
+}

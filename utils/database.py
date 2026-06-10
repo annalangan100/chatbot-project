@@ -120,3 +120,65 @@ def delete_response(response_id):
 
     connection.commit()
     connection.close()
+
+def update_response(
+    response_id,
+    user_input,
+    bot_response
+):
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        UPDATE responses
+        SET
+            user_input = ?,
+            bot_response = ?
+        WHERE id = ?
+        """,
+        (
+            user_input,
+            bot_response,
+            response_id
+        )
+    )
+
+    connection.commit()
+    connection.close()
+
+def get_response_by_id(
+    response_id
+):
+
+    import sqlite3
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+            id,
+            user_input,
+            bot_response
+        FROM responses
+        WHERE id = ?
+        """,
+        (response_id,)
+    )
+
+    response = cursor.fetchone()
+
+    connection.close()
+
+    return response

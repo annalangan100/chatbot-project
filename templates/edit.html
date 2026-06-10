@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Knowledge</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='styles.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>✏️ Edit Knowledge</h1>
+
+    </div>
+
+    <div class="chat-container">
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="user_input"
+                value="{{ response[1] }}"
+                required
+            >
+
+            <input
+                type="text"
+                name="bot_response"
+                value="{{ response[2] }}"
+                required
+            >
+
+            <button type="submit">
+
+                Save Changes
+
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

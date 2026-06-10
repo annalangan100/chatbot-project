@@ -4,7 +4,7 @@ from utils.database import get_semantic_response
 from utils.memory import load_user_data
 from utils.memory_commands import handle_memory_command
 from utils.chat_history import load_chat_history, save_chat_history, clear_chat_history
-from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response
+from utils.database import get_semantic_response, add_response, get_all_knowledge, delete_response, update_response, get_response_by_id
 
 app = Flask(__name__)
 
@@ -53,6 +53,41 @@ def delete(response_id):
 
     return redirect(
         "/admin"
+    )
+
+@app.route(
+    "/edit/<int:response_id>",
+    methods=["GET", "POST"]
+)
+def edit(response_id):
+
+    if request.method == "POST":
+
+        user_input = request.form[
+            "user_input"
+        ]
+
+        bot_response = request.form[
+            "bot_response"
+        ]
+
+        update_response(
+            response_id,
+            user_input,
+            bot_response
+        )
+
+        return redirect(
+            "/admin"
+        )
+
+    response = get_response_by_id(
+        response_id
+    )
+
+    return render_template(
+        "edit.html",
+        response=response
     )
 
 @app.route("/", methods=["GET", "POST"])

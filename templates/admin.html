@@ -63,6 +63,19 @@
 
                 <br><br>
 
+                <a
+                    href="/edit/{{ item[0] }}"
+                >
+
+                    <button
+                        type="button"
+                        class="edit-button"
+                    >
+                        Edit
+                    </button>
+
+                </a>
+
                 <form
                     action="/delete/{{ item[0] }}"
                     method="POST"

@@ -30,5 +30,125 @@
     {
         "user": "what is javascript",
         "bot": "JavaScript is a programming language used for web development."
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "what is python",
+        "bot": "Python is a programming language."
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "he",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "hey",
+        "bot": "Hi, there!"
+    },
+    {
+        "user": "hey",
+        "bot": "Hi, there!"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "hi",
+        "bot": "Hello!"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "Hello!"
+    },
+    {
+        "user": "banana",
+        "bot": "I don't understand that. Can you rephrase?"
+    },
+    {
+        "user": "helo",
+        "bot": "Hello!"
+    },
+    {
+        "user": "what is python",
+        "bot": "Python is a programming language."
     }
 ]

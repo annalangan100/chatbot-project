@@ -4,15 +4,26 @@ from utils.embeddings import get_embedding
 
 
 def get_all_responses():
-    connection = sqlite3.connect("data/responses.db")
+
+    connection = sqlite3.connect(
+        "data/responses.db"
+    )
+
     cursor = connection.cursor()
 
-    cursor.execute("""
-        SELECT user_input, bot_response
+    cursor.execute(
+        """
+        SELECT
+            user_input,
+            bot_response,
+            embedding
         FROM responses
-    """)
+        WHERE embedding IS NOT NULL
+        """
+    )
 
     data = cursor.fetchall()
+
     connection.close()
 
     return data
@@ -20,28 +31,45 @@ def get_all_responses():
 
 def get_semantic_response(user_input):
 
-    user_vec = get_embedding(user_input)
+    import json
+
+    user_vec = get_embedding(
+        user_input
+    )
 
     data = get_all_responses()
 
     best_score = -1
     best_response = None
 
-    for stored_input, bot_response in data:
 
-        stored_vec = get_embedding(stored_input)
+    for stored_input, bot_response, embedding in data:
 
-        score = np.dot(user_vec, stored_vec) / (
-            np.linalg.norm(user_vec) *
+        stored_vec = np.array(
+            json.loads(embedding)
+        )
+
+
+        score = np.dot(
+            user_vec,
+            stored_vec
+        ) / (
+            np.linalg.norm(user_vec)
+            *
             np.linalg.norm(stored_vec)
         )
 
+
         if score > best_score:
+
             best_score = score
             best_response = bot_response
 
-    if best_score < 0.55:
+
+    if best_score < 0.35:
+
         return "I don't understand that. Can you rephrase?"
+
 
     return best_response
 

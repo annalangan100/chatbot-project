@@ -75,7 +75,7 @@ def get_semantic_response(user_input):
 
 def add_response(user_input, bot_response):
 
-    import sqlite3
+    import json
 
     connection = sqlite3.connect(
         "data/responses.db"
@@ -83,23 +83,39 @@ def add_response(user_input, bot_response):
 
     cursor = connection.cursor()
 
+
+    embedding = get_embedding(
+        user_input
+    )
+
+
+    embedding_json = json.dumps(
+        embedding.tolist()
+    )
+
+
     cursor.execute(
         """
         INSERT INTO responses
         (
             user_input,
-            bot_response
+            bot_response,
+            embedding
         )
-        VALUES (?, ?)
+        VALUES (?, ?, ?)
         """,
         (
             user_input,
-            bot_response
+            bot_response,
+            embedding_json
         )
     )
 
+
     connection.commit()
+
     connection.close()
+
 
 def get_all_knowledge():
 
@@ -249,7 +265,7 @@ def search_knowledge(search_term):
 def import_csv(file_path):
 
     import csv
-    import sqlite3
+    import json
 
     connection = sqlite3.connect(
         "data/responses.db"
@@ -257,34 +273,51 @@ def import_csv(file_path):
 
     cursor = connection.cursor()
 
+
     with open(
         file_path,
         "r",
         encoding="utf-8"
     ) as file:
 
+
         reader = csv.DictReader(
             file
         )
 
+
         for row in reader:
+
+            embedding = get_embedding(
+                row["user_input"]
+            )
+
+
+            embedding_json = json.dumps(
+                embedding.tolist()
+            )
+
 
             cursor.execute(
                 """
                 INSERT INTO responses
                 (
                     user_input,
-                    bot_response
+                    bot_response,
+                    embedding
                 )
-                VALUES (?, ?)
+                VALUES (?, ?, ?)
                 """,
                 (
                     row["user_input"],
-                    row["bot_response"]
+                    row["bot_response"],
+                    embedding_json
                 )
             )
 
+
     connection.commit()
+
     connection.close()
 
 
